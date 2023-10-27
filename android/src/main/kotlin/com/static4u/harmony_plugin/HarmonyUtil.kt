@@ -2,8 +2,10 @@ package com.static4u.harmony_plugin
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.os.Build
 import android.provider.Settings
 import android.text.TextUtils
+import android.text.TextUtils.substring
 import android.util.Log
 
 /**
@@ -37,6 +39,27 @@ object HarmonyUtil {
      * @return 版本号
      */
     get() = getProp("hw_sc.build.platform.version", "")
+
+  val harmonyDisplayVersion: String
+    /**
+     * 获取鸿蒙系统版本号
+     *
+     * @return 版本号
+     */
+    get() {
+      return Build.DISPLAY.let {
+        //ELS-AN00 2.0.0.222(CO0E206R3P6)
+        //切分出2.0.0.222
+        var text = it
+        if (it.contains("(")) {//分离出ELS-AN00 2.0.0.222
+          text = text.substring(0, it.indexOf("("))
+        }
+        if (text.contains(" ")) {//再分离出2.0.0.222
+          text = text.substring(text.lastIndexOf(" ") + 1, text.length)
+        }
+        text.replace(" ","")
+      }
+    }
 
   @SuppressLint("PrivateApi")
   private fun getProp(property: String, defaultValue: String): String {

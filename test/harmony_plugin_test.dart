@@ -12,6 +12,10 @@ class MockHarmonyPluginPlatform
   Future<String> getHarmonyVersion() {
     throw UnimplementedError();
   }
+  @override
+  Future<String> getHarmonyDisplayVersion() {
+    throw UnimplementedError();
+  }
 
   @override
   Future<bool> isHarmonyOS() {

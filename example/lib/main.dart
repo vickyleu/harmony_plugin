@@ -32,10 +32,12 @@ class _MyAppState extends State<MyApp> {
     bool isHarmony;
     bool isPureMode;
     String harmonyVersion;
+    String harmonyDisplayVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
       isHarmony = await _harmonyPlugin.isHarmonyOS();
+      harmonyDisplayVersion = await _harmonyPlugin.getHarmonyDisplayVersion();
       harmonyVersion = await _harmonyPlugin.getHarmonyVersion();
       isPureMode = await _harmonyPlugin.isHarmonyPureMode();
     } on PlatformException {

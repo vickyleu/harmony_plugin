@@ -14,6 +14,8 @@ public class HarmonyPlugin: NSObject, FlutterPlugin {
       result(false)
     case "getHarmonyVersion":
       result("")
+    case "getHarmonyDisplayVersion":
+      result("")
     case "isHarmonyPureMode":
       result(false)
     default:

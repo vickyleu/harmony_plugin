@@ -30,6 +30,8 @@ class HarmonyPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
       result.success(HarmonyUtil.isHarmonyOs)
     } else if (call.method == "getHarmonyVersion") {
       result.success(HarmonyUtil.harmonyVersion)
+    } else if (call.method == "getHarmonyDisplayVersion") {
+      result.success(HarmonyUtil.harmonyDisplayVersion)
     } else if (call.method == "isHarmonyPureMode") {
       result.success(HarmonyUtil.isPureMode(activity))
     } else {
