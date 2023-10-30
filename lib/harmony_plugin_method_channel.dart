@@ -21,6 +21,12 @@ class MethodChannelHarmonyPlugin extends HarmonyPluginPlatform {
         await methodChannel.invokeMethod<String>('getHarmonyVersion');
     return version ?? '';
   }
+  @override
+  Future<String> getHarmonyDisplayVersion() async {
+    String? version =
+        await methodChannel.invokeMethod<String>('getHarmonyDisplayVersion');
+    return version ?? '';
+  }
 
   @override
   Future<bool> isHarmonyPureMode() async {

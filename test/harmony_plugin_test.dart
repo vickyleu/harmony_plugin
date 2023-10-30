@@ -19,6 +19,11 @@ class MockHarmonyPluginPlatform
   }
 
   @override
+  Future<String> getHarmonyDisplayVersion() {
+    throw UnimplementedError();
+  }
+
+  @override
   Future<bool> isHarmonyPureMode() {
     throw UnimplementedError();
   }

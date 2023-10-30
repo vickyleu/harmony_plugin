@@ -23,7 +23,7 @@ object HarmonyUtil {
         false
       } else {
         val isHarmony = "Harmony".equals(osBrand.toString(), ignoreCase = true)
-        Log.i("HarmonyUtil", "当前设备是鸿蒙系统")
+//        Log.i("HarmonyUtil", "当前设备是鸿蒙系统")
         isHarmony
       }
     } catch (e: Exception) {
@@ -38,6 +38,18 @@ object HarmonyUtil {
      */
     get() = getProp("hw_sc.build.platform.version", "")
 
+  val harmonyDisplayVersion: String
+    /**
+     * 获取鸿蒙系统版本号
+     *
+     * @return 版本号
+     */
+    get() = android.os.Build.DISPLAY.let {
+      val subString = it.substring(it.indexOf(harmonyVersion), it.length)
+      val harmonyVersion = subString.substring(0, subString.indexOf("("))
+      harmonyVersion
+    }
+
   @SuppressLint("PrivateApi")
   private fun getProp(property: String, defaultValue: String): String {
     try {
@@ -47,7 +59,7 @@ object HarmonyUtil {
       if (TextUtils.isEmpty(value)) {
         return defaultValue
       }
-      Log.i("HarmonyUtil", "当前设备是鸿蒙" + value + "系统")
+//      Log.i("HarmonyUtil", "当前设备是鸿蒙" + value + "系统")
       return value
     } catch (e: Exception) {
       e.printStackTrace()

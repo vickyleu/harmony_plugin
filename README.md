@@ -17,4 +17,5 @@ samples, guidance on mobile development, and a full API reference.
 
 1. `Future<bool> isHarmonyOS();`
 2. `Future<String> getHarmonyVersion();`
-3. `Future<bool> isHarmonyPureMode();`
+3. `Future<String> getHarmonyDisplayVersion();`
+4. `Future<bool> isHarmonyPureMode();`
