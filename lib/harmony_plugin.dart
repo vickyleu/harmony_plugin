@@ -8,6 +8,9 @@ class HarmonyPlugin {
   Future<String> getHarmonyVersion() {
     return HarmonyPluginPlatform.instance.getHarmonyVersion();
   }
+  Future<String> getHarmonyDisplayVersion() {
+    return HarmonyPluginPlatform.instance.getHarmonyDisplayVersion();
+  }
 
   Future<String> getHarmonyDisplayVersion() {
     return HarmonyPluginPlatform.instance.getHarmonyDisplayVersion();

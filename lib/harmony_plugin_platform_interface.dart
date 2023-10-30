@@ -32,6 +32,10 @@ abstract class HarmonyPluginPlatform extends PlatformInterface {
   Future<String> getHarmonyVersion() {
     throw UnimplementedError('getHarmonyVersion() has not been implemented.');
   }
+  /// 获取鸿蒙系统版本
+  Future<String> getHarmonyDisplayVersion() {
+    throw UnimplementedError('getHarmonyDisplayVersion() has not been implemented.');
+  }
 
   /// 获取鸿蒙系统软件版本
   Future<String> getHarmonyDisplayVersion() {
