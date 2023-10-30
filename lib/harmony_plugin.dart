@@ -12,10 +12,6 @@ class HarmonyPlugin {
     return HarmonyPluginPlatform.instance.getHarmonyDisplayVersion();
   }
 
-  Future<String> getHarmonyDisplayVersion() {
-    return HarmonyPluginPlatform.instance.getHarmonyDisplayVersion();
-  }
-
   Future<bool> isHarmonyPureMode() {
     return HarmonyPluginPlatform.instance.isHarmonyPureMode();
   }
