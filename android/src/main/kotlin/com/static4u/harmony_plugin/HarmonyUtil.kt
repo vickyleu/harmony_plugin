@@ -27,7 +27,7 @@ object HarmonyUtil {
         isHarmony
       }
     } catch (e: Exception) {
-      e.printStackTrace()
+//      e.printStackTrace()
       false
     }
   val harmonyVersion: String
@@ -62,7 +62,7 @@ object HarmonyUtil {
 //      Log.i("HarmonyUtil", "当前设备是鸿蒙" + value + "系统")
       return value
     } catch (e: Exception) {
-      e.printStackTrace()
+//      e.printStackTrace()
     }
     return defaultValue
   }
@@ -80,7 +80,7 @@ object HarmonyUtil {
         result = 0 == Settings.Secure.getInt(context.contentResolver, "pure_mode_state", 0)
       }
     } catch (e: Exception) {
-      e.printStackTrace()
+//      e.printStackTrace()
     }
     return result
   }
