@@ -50,7 +50,11 @@ object HarmonyUtil {
         val harmonyVersion = subString.substring(0, subString.indexOf("("))
         harmonyVersion
       }catch (e:Exception){
-        "$harmonyVersion.0"
+        if(harmonyVersion.isEmpty()){
+          "0.0.0"
+        }else{
+          "$harmonyVersion.0"
+        }
       }
     }
 
