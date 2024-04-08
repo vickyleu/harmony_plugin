@@ -45,9 +45,13 @@ object HarmonyUtil {
      * @return 版本号
      */
     get() = android.os.Build.DISPLAY.let {
-      val subString = it.substring(it.indexOf(harmonyVersion), it.length)
-      val harmonyVersion = subString.substring(0, subString.indexOf("("))
-      harmonyVersion
+      try {
+        val subString = it.substring(it.indexOf(harmonyVersion), it.length)
+        val harmonyVersion = subString.substring(0, subString.indexOf("("))
+        harmonyVersion
+      }catch (e:Exception){
+        "$harmonyVersion.0"
+      }
     }
 
   @SuppressLint("PrivateApi")
